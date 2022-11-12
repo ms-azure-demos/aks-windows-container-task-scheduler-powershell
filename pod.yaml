@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taskschedulertest
+spec:
+  containers:
+  - name: taskschedulertest-container
+    image: joymon/task-scheduler-powershell:latest # replace with your own registry
+    args:
+    - cmd
+    - /c
+    - start /wait timeout 600 #Have to use timeout with start else it will error out
+  nodeSelector:
+    "kubernetes.io/os": windows
