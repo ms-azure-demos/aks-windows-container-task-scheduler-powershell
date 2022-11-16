@@ -39,3 +39,7 @@ Below are some points about how it is structured
 # Interesting
 
   - The Dockerfile don't have any EntryPoint to hold the container when running inside AKS. So pod.yaml needs to hold it for sometime with the help of args. Ideally `timeout 600` is enough but it will throw **"ERROR: Input redirection is not supported, exiting the process immediately"**. To workaround that the pod.yaml file uses `start /wait` [with timeout](https://stackoverflow.com/questions/32307870/add-a-timeout-between-two-batch-command-lines-in-jenkins)
+
+# On the web
+
+- [Azure @ Enterprise - Scheduling task inside Windows container in Kubernetes](https://joymonscode.blogspot.com/2022/11/azure-enterprise-scheduling-task-inside.html)
